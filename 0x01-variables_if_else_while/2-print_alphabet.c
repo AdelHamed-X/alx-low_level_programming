@@ -9,10 +9,12 @@
 
 int main(void)
 {
-	char test[] = "abcddefghijklmnopqrstuvwxyz";
+	char letter;
 
-	for (int i = 0; i < strlen(test); i++)
+	for (letter = 'a'; letter <= 'z'; letter++)
 	{
-		putchar(test[i]);
+		putchar(letter);
 	}
+	putchar('\n')
+	return (0);
 }
