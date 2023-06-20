@@ -7,14 +7,11 @@ int _abs(int a)
 {
 	if (a < 0)
 	{
-		int c;
-
-		c = a * -1;
-		_putchar(c);
+		return (-a);
 	}
 	else
 	{
-		_putchar(a);
+		return (a);
 	}
 	_putchar('\n');
 }
