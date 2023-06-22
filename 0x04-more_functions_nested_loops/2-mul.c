@@ -2,7 +2,8 @@
 
 /**
  * mul - multiplies two integers
- * @a: an int, @b: an int
+ * @a: an int
+ * @b: an int
  * Return: sum
  */
 int mul(int a, int b)
