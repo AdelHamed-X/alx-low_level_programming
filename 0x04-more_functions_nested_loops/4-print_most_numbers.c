@@ -1,19 +1,20 @@
 #include "main.h"
 
 /**
- * print_most_numbers - prints the numberes till 9
+ * print_most_numbers - check the code for Holberton School students.
+ * Return: Always 0.
  */
 void print_most_numbers(void)
 {
-	char i;
+	char c = '0';
 
-	for (i = '0'; i <= '9'; i++)
+	while (c <= '9')
 	{
-		if (i == '2' || i == '4')
+		if (c != '2' && c != '4')
 		{
-			continue;
+			_putchar(c);
 		}
-		_putchar(i);
+		c++;
 	}
 	_putchar('\n');
 }
