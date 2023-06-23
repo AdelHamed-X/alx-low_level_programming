@@ -1,5 +1,9 @@
 #include <stdio.h>
 
+/**
+ * main - prints the fizz buzz loop
+ * Return: 0
+ */ 
 int main(void)
 {
 	int i;
