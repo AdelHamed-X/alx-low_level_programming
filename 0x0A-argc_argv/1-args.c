@@ -6,8 +6,8 @@
  *
  *
  */
-int main(int argc, char *argv[] __attribute__((unused)))
+int main(int argc, char *argv[])
 {
-	printf("%i", argc);
+	printf("%i\n", argc);
 	return (0);
 }
