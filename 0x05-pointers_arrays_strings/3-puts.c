@@ -1,10 +1,8 @@
 #include "main.h"
 
 /**
- *
- *
- *
- *
+ * _puts - prints strings
+ *@str: a pointer
  */
 void _puts(char *str)
 {
