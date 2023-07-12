@@ -6,7 +6,7 @@
  *
  *
  */
-void print_array(int *s, int n);
+void print_array(int *s, int n)
 {
 	int i;
 
