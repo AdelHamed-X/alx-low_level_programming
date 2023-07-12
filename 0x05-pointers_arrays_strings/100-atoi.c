@@ -7,9 +7,10 @@
  */
 int _atoi(char *s)
 {
-	int i, sign, len;
+	int i, result, sign, len;
 
 	len = 0;
+	result = 0;
 	while (s[len] == '\0')
 	{
 		len++;
@@ -22,7 +23,7 @@ int _atoi(char *s)
 	{
 		if (s[i] >= '0' && s[i] <= '9')
 		{
-			result = result * 10 + *s[i];
+			result = result * 10 + s[i];
 		}
 		else
 		{
