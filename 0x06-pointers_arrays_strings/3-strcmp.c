@@ -21,7 +21,7 @@ int _strcmp(char *s1, char *s2)
 		slen1++;
 		slen2++;
 	}
-	result = s1[slen1] - s2[slen2]
+	result = s1[slen1] - s2[slen2];
 	
 	return (result);
 }
