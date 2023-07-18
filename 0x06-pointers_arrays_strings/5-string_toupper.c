@@ -1,18 +1,19 @@
 #include "main.h"
 
 /**
- *
- *
- *
+ * string_toupper - converting all ht elowercase letters in astring to its uppercase
+ *@s: a pointer to the string
+ *Return: the resulting string
  */
-char *string_toupper(char *)
+char *string_toupper(char *s)
 {
-	while (* != '/0')
+	
+	while (*s != '/0')
 	{
-		if (* > 97 && * < 122)
+		if (*s >= 97 && *s =< 122)
 		{
-			* = * - 32;
+			*s = *s - 32;
 		}
 	}
-	return (0);
+	return (s);
 }
