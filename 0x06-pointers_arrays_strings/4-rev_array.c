@@ -2,11 +2,12 @@
 
 /**
  * reverse_array - reverses an array
- *
+ *@a: a pointer to an array
+ *@n: the number of elements of the array
  */
 void reverse_array(int *a, int n)
 {
-	int temp, j; 
+	int temp, j;
 
 	for (j = 0; j < n / 2; j++)
 	{
