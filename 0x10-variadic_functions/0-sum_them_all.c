@@ -11,8 +11,8 @@ int sum_them_all(const unsigned int n, ...)
 	if (n != 0)
 	{
 		int x;
-                int result;
-                unsigned int i;
+		int result;
+		unsigned int i;
 
 		va_list args;
 
