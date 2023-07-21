@@ -8,63 +8,43 @@
  */
 void print_all(const char * const format, ...)
 {
-	int i;
 	int j;
-	char _char;
-	int _int;
-	float _float;
-	char *string;
 	int len;
 	va_list list;
 
-	i = 0;
-	j = 0;
-	len = 0;
+	j = len = 0;
 
-	va_start(list, format);
-
-	while (format[i] != '\0')
+	while (format[len] != '\0')
 	{
 		len++;
 	}
-
+	
+	va_start(list, format);
 	while (j < len)
 	{
 		if (format[j] == 'c')
 		{
-			_char = va_arg(list, int);
-			printf("%c", _char);
+			printf("%c", va_arg(list, int));
 		}
 		else if (format[j] == 'i')
 		{
-			_int = va_arg(list, int);
-			printf("%i", _int);
+			printf("%i", va_arg(list, int));
 		}
 		else if (format[j] == 'f')
 		{
-			_float = va_arg(list, double);
-			printf("%f", _float);
+			printf("%f", va_arg(list, double));
 		}
-		else if (format[i] == 's')
+		else if (format[j] == 's')
 		{
-			string = va_arg(list, char *);
-			if (!string)
-			{
+			if (!va_arg(list, char *))
 				printf("(nil)");
-			}
 			else
-			{
-				printf("%s", string);
-			}
+				printf("%s", va_arg(list, char *));
 		}
 		else
-		{
 			continue;
-		}
-
 		j++;
 	}
 	printf("\n");
-
 	va_end(list);
 }
