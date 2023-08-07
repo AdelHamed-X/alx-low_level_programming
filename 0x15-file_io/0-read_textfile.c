@@ -9,24 +9,26 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
-	char buff[1024];
+	char *buff;
 	ssize_t bytesRead;
 	ssize_t bytesWrite;
 
+	buff = malloc(sizeof(char) * letters);
+
 	if (!filename)
 		return (0);
-	fd = open(filename, O_RDWR);
-	if (fd == -1)
-		return (0);
 
+	fd = open(filename, O_RDONLY);
 	bytesRead = read(fd, buff, letters);
-	if (bytesRead == -1)
-		return (0);
-
 	bytesWrite = write(STDOUT_FILENO, buff, bytesRead);
-	if (bytesWrite == -1)
-		return (0);
 
+	if (bytesRead == -1 || bytesWrite == -1 || fd == -1)
+	{
+		free(buff);
+		return (0);
+	}
+
+	free(buff);
 	close(fd);
 	return (bytesRead);
 }
