@@ -1,12 +1,8 @@
 #include "lists.h"
 
 /**
- * add_dnodeint_end - adds a new node at the end
- * of a dlistint_t list
- *
+ * free_dlistint - frees a list
  * @head: head of the list
- * @n: value of the element
- * Return: the address of the new element
  */
 void free_dlistint(dlistint_t *head)
 {
