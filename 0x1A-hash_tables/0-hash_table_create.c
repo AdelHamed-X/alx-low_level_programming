@@ -13,17 +13,3 @@ hash_table_t *hash_table_create(unsigned long int size)
 
 	return (array);
 }
-
-/**
- * main - check the code for
- *
- * Return: Always EXIT_SUCCESS.
- */
-int main(void)
-{
-    hash_table_t *ht;
-
-    ht = hash_table_create(2048);
-    printf("%p\n", (void *)ht);
-    return (EXIT_SUCCESS);
-}
