@@ -35,8 +35,8 @@ int binary_search(int *array, size_t size, int value)
 
     left = 0;
     right = size - 1;
-here:
-    while (left < right)
+
+    while (left <= right)
     {
         printf("Searching in array: ");
         print_array(array, left, right);
@@ -46,12 +46,10 @@ here:
         if (array[middle] < value)
         {
             left = middle + 1;
-            goto here;
         }
         else if (array[middle] > value)
         {
             right = middle - 1;
-            goto here;
         }
         else
             return (middle);
