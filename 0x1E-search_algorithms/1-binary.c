@@ -1,7 +1,11 @@
 #include "search_algos.h"
 
 /**
+ * print_array - prints an array of characters
  * 
+ * @arr: a pointer to the array to print
+ * @left: the start of the array
+ * @right: the end of the array
 */
 void print_array(int *arr, size_t left, size_t right)
 {
@@ -14,14 +18,6 @@ void print_array(int *arr, size_t left, size_t right)
             printf(", ");
     }
     printf("\n");
-}
-
-int middle_index_func(size_t size)
-{
-    if (size % 2 == 0)
-            return (size / 2 - 1);
-        else
-            return ((size - 1) / 2);
 }
 
 /**
