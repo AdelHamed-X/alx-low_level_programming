@@ -3,14 +3,14 @@
 /**
  * 
 */
-void print_array(int *arr, size_t size)
+void print_array(int *arr, size_t left, size_t right)
 {
     size_t i;
 
-    for (i = 0; i < size; i++)
+    for (i = left; i <= right; i++)
     {
         printf("%i", arr[i]);
-        if (i != size - 1)
+        if (i != right)
             printf(", ");
     }
     printf("\n");
@@ -35,44 +35,30 @@ int middle_index_func(size_t size)
 */
 int binary_search(int *array, size_t size, int value)
 {
-    size_t new_size, middle_index, i, j;
-    int result, *new_arr;
+    size_t left, right, middle;
 
-    if (array && size > 0)
+    left = 0;
+    right = size - 1;
+here:
+    while (left < right)
     {
         printf("Searching in array: ");
-        print_array(array, size);
-        middle_index = middle_index_func(size);
-        printf("middle index: %li\n", middle_index);
-        
-        if (value == array[middle_index])
-            return (middle_index);
-        else if (value > array[middle_index])
+        print_array(array, left, right);
+
+        middle = floor((left + right) / 2);
+
+        if (array[middle] < value)
         {
-            new_size = size - (middle_index + 1);
-            new_arr = malloc(sizeof(int) * new_size);
-            middle_index = middle_index_func(new_size);
-
-            for (i = middle_index + 1, j = 0; i < size; i++, j++)
-                new_arr[j] = array[i];
-
-            result = binary_search(new_arr, new_size, value);
-
-            return (result);
+            left = middle + 1;
+            goto here;
         }
-        else if (value < array[middle_index])
+        else if (array[middle] > value)
         {
-            new_size = middle_index;
-            new_arr = malloc(sizeof(int) * new_size);
-            middle_index = middle_index_func(new_size);
-
-            for (i = 0; i < middle_index; i++)
-                new_arr[i] = array[i];
-            
-            result = binary_search(new_arr, new_size, value);
-
-            return (result);
+            right = middle - 1;
+            goto here;
         }
+        else
+            return (middle);
     }
     return (-1);
 }
